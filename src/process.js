@@ -8,6 +8,5 @@ export default (data) => {
       tempmin,
     }),
   );
-
-  console.log(weatherInfo);
+  return [resolvedAddress, weatherInfo];
 };

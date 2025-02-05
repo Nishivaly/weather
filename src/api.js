@@ -1,4 +1,5 @@
 import processData from "./process";
+import populateTable from "./display";
 
 export default (location) => {
   fetch(
@@ -8,7 +9,9 @@ export default (location) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      processData(data);
+      return processData(data);
     })
+    .then(([place, data]) => populateTable(data, place))
+    // .then(([place, weatherInfo]) => console.log(place, weatherInfo))
     .catch((error) => console.log(error));
 };
