@@ -1,4 +1,4 @@
-export default function populateTable(data, place, unit) {
+export default function populateTable(data, place, unit, currentWeather) {
   const table = document.querySelector("#weather-table");
   const tbody = document.querySelector("#weatherTableBody");
 
@@ -22,6 +22,7 @@ export default function populateTable(data, place, unit) {
 
     tbody.appendChild(row);
     document.querySelector("#place").textContent = place;
+    document.querySelector("#today").textContent = currentWeather;
     table.classList.remove("hidden");
   });
 }

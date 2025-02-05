@@ -11,8 +11,9 @@ export default async (location, unit) => {
       },
     );
     const data = await response.json();
-    const [place, cleanData] = processData(data);
-    populateTable(cleanData, place, unit);
+    console.log(data);
+    const [place, cleanData, currentWeather] = processData(data);
+    populateTable(cleanData, place, unit, currentWeather);
   } catch (error) {
     console.log(error);
   }
