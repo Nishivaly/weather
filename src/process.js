@@ -1,17 +1,15 @@
 export default (data) => {
   // resolvedAddress is the location
   const {
-    resolvedAddress,
+    resolvedAddress: place,
     days,
     currentConditions: { conditions: currentWeather },
   } = data;
-  const weatherInfo = days.map(
-    ({ conditions, datetime, tempmax, tempmin }) => ({
-      conditions,
-      datetime,
-      tempmax,
-      tempmin,
-    }),
-  );
-  return [resolvedAddress, weatherInfo, currentWeather];
+  const cleanData = days.map(({ conditions, datetime, tempmax, tempmin }) => ({
+    conditions,
+    datetime,
+    tempmax,
+    tempmin,
+  }));
+  return [place, cleanData, currentWeather];
 };
