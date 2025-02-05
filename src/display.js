@@ -1,5 +1,5 @@
 export default function populateTable(data, place) {
-  document.querySelector("#place").textContent = place;
+  const table = document.querySelector("#weather-table");
 
   const tbody = document.querySelector("#weatherTableBody");
   tbody.innerHTML = "";
@@ -14,5 +14,7 @@ export default function populateTable(data, place) {
       `;
 
     tbody.appendChild(row);
+    document.querySelector("#place").textContent = place;
+    table.classList.remove("hidden");
   });
 }

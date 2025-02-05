@@ -5,16 +5,22 @@ body {
   height: 100vh;
 }
 
+.hidden {
+  display: none;
+}
+
 .info {
   text-align: center;
   margin-bottom: 20px;
+  width: min-content;
+  button {
+    margin-top: 10px;
+  }
 }
 
 .container {
   display: grid;
   grid-template-rows: min-content 2fr;
-}
-
-.table-display {
-  justify-self: center;
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
