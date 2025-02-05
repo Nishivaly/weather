@@ -3,6 +3,8 @@
 body {
   font-size: 1.6rem;
   height: 100vh;
+  background-color: rgb(47, 83, 129);
+  color: white;
 }
 
 .hidden {

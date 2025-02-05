@@ -10,8 +10,8 @@ import getWeather from "./api";
     event.preventDefault();
 
     const location = document.querySelector("#location").value;
-
-    getWeather(location);
-    weatherForm.reset();
+    const unit = document.querySelector("input[name='unit']:checked").value;
+    getWeather(location, unit);
+    // weatherForm.reset();
   });
 })();
